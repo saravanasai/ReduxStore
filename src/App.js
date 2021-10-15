@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { connect } from "react-redux";
+import Header from "./components/Header";
+import { setProduct } from "./redux/action/productAction";
+import {BrowserRouter as Router,Switch,Route} from 'react-router-dom'
+import ProductList from "./components/ProductList";
+import ProductDetail from "./container/ProductDetail";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   
+      <div className="ui">
+           <Header />
+       <Router>
+         <Switch>
+           <Route exact  path='/' component={ProductList} />
+           <Route  path='/product/:productId' component={ProductDetail} />
+           <Route path="*">404 NOT FOUND</Route>
+         </Switch>
+       </Router>
+      </div>
+   
   );
 }
+
+
 
 export default App;

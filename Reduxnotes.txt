@@ -1,0 +1,7 @@
+
+
+//commands to install redux and react-redux 
+
+   1. npm install redux react-redux 
+   2. rfce for creating a functional components 
+   
